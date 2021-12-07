@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "vant": "3",
+    "vite-plugin-style-import": "^1.4.0",
     "vue": "^3.2.16"
   },
   "devDependencies": {

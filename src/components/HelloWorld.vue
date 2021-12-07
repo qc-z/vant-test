@@ -1,14 +1,5 @@
-<script setup>
-import { ref } from 'vue'
-
-defineProps({
-  msg: String
-})
-
-const count = ref(0)
-</script>
-
 <template>
+  <van-image width="100" height="100" lazy-load src="https://img.yzcdn.cn/vant/cat.jpeg" />
   <van-form @submit="onSubmit">
     <van-cell-group inset>
       <van-field
@@ -37,24 +28,16 @@ const count = ref(0)
   <van-button type="warning">警告按钮</van-button>
   <van-button type="danger">危险按钮</van-button>
 </template>
-<script>
+
+<script setup>
 import { ref } from 'vue'
-
-export default {
-  setup() {
-    const username = ref('')
-    const password = ref('')
-    const onSubmit = (values) => {
-      console.log('submit', values)
-    }
-
-    return {
-      username,
-      password,
-      onSubmit
-    }
-  }
+import { Toast } from 'vant'
+const username = ref('')
+const password = ref('')
+const onSubmit = (values) => {
+  console.log('submit', values)
 }
+Toast('提示内容')
 </script>
 <style scoped>
 a {
