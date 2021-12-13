@@ -30,8 +30,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { Toast } from 'vant'
+console.log(debounce)
+console.log(throttle)
+console.log(stringify({ a: 1, b: 2, c: '' }))
+
 const username = ref('')
 const password = ref('')
 const onSubmit = (values) => {

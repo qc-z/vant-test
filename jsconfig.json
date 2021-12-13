@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "charset": "utf8",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": true,
+    "module": "esnext", // 修改 commonjs -- esnext
+    "newLine": "lf",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "outDir": "dist",
+    "pretty": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "stripInternal": true,
+    "importHelpers": true,
+    "target": "esnext"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "typings",
+    "src/components/*.tsx"
+  ]
+}
