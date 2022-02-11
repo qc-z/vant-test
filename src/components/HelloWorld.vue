@@ -19,31 +19,37 @@
       />
     </van-cell-group>
     <div style="margin: 16px">
-      <van-button round block type="primary" native-type="submit"> 提交 </van-button>
+      <van-button round block type="primary" native-type="submit"> 提交</van-button>
     </div>
   </van-form>
-  <van-button type="primary">主要按钮</van-button>
-  <van-button type="success">成功按钮</van-button>
-  <van-button type="default">默认按钮</van-button>
-  <van-button type="warning">警告按钮</van-button>
-  <van-button type="danger">危险按钮</van-button>
+
+  <van-button type="primary" @click="open">打开弹窗</van-button>
+  <van-button type="success" @click="open">成功按钮</van-button>
+  <van-button type="warning" @click="open">警告按钮</van-button>
+  <van-button type="danger" @click="open">危险按钮</van-button>
 </template>
 
 <script setup lang="ts">
 import { AnyNaptrRecord } from 'dns'
-import { Toast } from 'vant'
-// console.log(debounce)
+import { Dialog, Toast } from 'vant'
 
 const username = ref('')
 const password = ref('')
 const onSubmit = (values: AnyNaptrRecord) => {
   console.log('submit', values)
+  Toast.success('success')
 }
-Toast('提示内容')
-const test = ref(null)
+const open = () => {
+  Dialog({ message: '手动弹窗' })
+}
+Dialog.confirm({
+  title: '标题',
+  message: '初始化弹窗'
+})
+  .then(() => {
+    Toast('confirm')
+  })
+  .catch(() => {
+    Toast('cancel')
+  })
 </script>
-<style scoped>
-a {
-  color: #42b983;
-}
-</style>
