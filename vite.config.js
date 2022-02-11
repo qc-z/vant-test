@@ -7,7 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import {
   VantResolver,
 } from 'unplugin-vue-components/resolvers'
-import styleImport, { VantResolve } from 'vite-plugin-style-import'
+import { VantResolve, createStyleImportPlugin } from 'vite-plugin-style-import'
 const path = require('path')
 
 // https://vitejs.dev/config/
@@ -22,7 +22,7 @@ export default defineConfig({
       extensions: ['vue', 'ts', 'tsx'],
       dts: 'src/components.d.ts'
     }),
-    styleImport({
+    createStyleImportPlugin({
       resolves: [VantResolve()]
     }),
     AutoImport({
@@ -30,7 +30,7 @@ export default defineConfig({
       imports: ['vue'
       ],
       dts: 'src/auto-import.d.ts',
-      resolvers: [custromResolvers()]
+      // resolvers: [CustromResolvers()]
     })
 
   ],
@@ -45,18 +45,18 @@ export default defineConfig({
     open: true
   }
 })
-function custromResolvers(options = {}) {
-  const packName = ['debounce', 'throttle', 'stringify']
-  return [
-    {
-      type: "utils",
-      resolve: (name) => {
-        if (!packName.includes(name)) return
-        return {
-          path: '@/utils',
-        }
-      }
-    }
-  ]
-}
+// function CustromResolvers(options = {}) {
+//   const packName = ['debounce', 'throttle', 'stringify']
+//   return [
+//     {
+//       type: "utils",
+//       resolve: (name) => {
+//         if (!packName.includes(name)) return
+//         return {
+//           path: '@/utils',
+//         }
+//       }
+//     }
+//   ]
+// }
 

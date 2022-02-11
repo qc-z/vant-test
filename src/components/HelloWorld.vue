@@ -29,18 +29,18 @@
   <van-button type="danger">危险按钮</van-button>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { AnyNaptrRecord } from 'dns'
 import { Toast } from 'vant'
-console.log(debounce)
-console.log(throttle)
-console.log(stringify({ a: 1, b: 2, c: '' }))
+// console.log(debounce)
 
 const username = ref('')
 const password = ref('')
-const onSubmit = (values) => {
+const onSubmit = (values: AnyNaptrRecord) => {
   console.log('submit', values)
 }
 Toast('提示内容')
+const test = ref(null)
 </script>
 <style scoped>
 a {

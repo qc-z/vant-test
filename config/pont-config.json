@@ -1,0 +1,18 @@
+{
+  "origins": [
+    {
+      "originUrl": "https://petstore.swagger.io/v2/swagger.json",
+      "name": "petstore",
+      "outDir": "../src/api/petstore",
+      "usingOperationId": true
+    },
+    {
+      "originUrl": "https://petstore.swagger.io/v2/swagger.json",
+      "name": "petstore1",
+      "outDir": "../src/api/petstore1",
+      "usingOperationId": true
+    }
+  ],
+  "templatePath": "./pont-template",
+  "usingMultipleOrigins": true
+}
